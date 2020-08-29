@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryNight">#000000</color>
+    <color name="colorPrimaryDarkNight">#000000</color>
+    <color name="colorAccentNight">#03DAC5</color>
+
+    <color name="numbers">#ffffff</color>
+    <color name="operations">#ff751a </color>
+    <color name="background">#000000</color>
+
+    <color name="thinBar">#6C808080</color>
+
+    <color name="answerField">#8F8F8F</color>
+
+    <color name="item_color_listview">#686666</color>
+</resources>

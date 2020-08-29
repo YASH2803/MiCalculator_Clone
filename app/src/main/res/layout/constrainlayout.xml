@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:layout_margin="16dp"
+    app:layoutDescription="@xml/constrainlayout_scene">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_weight="0.6"
+        tools:ignore="MissingConstraints">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/input"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom|end"
+        android:textColor="@color/numbers"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/answer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_view"
+        app:layout_constraintVertical_weight="0.2"
+        tools:text="1234567891234" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom|end"
+        tools:text="0"
+        android:textSize="35sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/button_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input"
+        app:layout_constraintVertical_weight="0.15"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/thinBar" />
+
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="18dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginBottom="18dp"
+            tools:ignore="NestedWeights">
+
+            <Button
+                android:id="@+id/clear"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="@string/clear"
+                android:textColor="@color/operations"
+                android:textSize="25sp" />
+
+            <ImageButton
+                android:id="@+id/backspace"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:src="@drawable/ic_backspace_24px" />
+
+            <ImageButton
+                android:id="@+id/mod"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:src="@drawable/ic_percent" />
+
+            <ImageButton
+                android:id="@+id/division"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:src="@drawable/ic_divide" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="18dp"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/seven"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/seven"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/eight"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/eight"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/nine"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/nine"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <ImageButton
+                android:id="@+id/multiplication"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:src="@drawable/ic_clear_24px"
+                android:textColor="@color/operations" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="18dp"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/four"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/four"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/five"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:foreground="?actionBarItemBackground"
+                android:text="@string/five"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/six"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/six"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <ImageButton
+                android:id="@+id/subtraction"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:src="@drawable/ic_remove_24px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginBottom="18dp"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/one"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/one"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/two"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/two"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/three"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/three"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <ImageButton
+                android:id="@+id/addition"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:src="@drawable/ic_add_24px"
+                android:textColor="@color/operations" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="18dp"
+            android:orientation="horizontal">
+
+            <View
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                tools:ignore="NestedWeights" />
+
+            <Button
+                android:id="@+id/zero"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/zero"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+            <Button
+                android:id="@+id/dot"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="?android:attr/actionBarItemBackground"
+                android:fontFamily="@font/roboto"
+                android:text="@string/dot"
+                android:textColor="@color/numbers"
+                android:textSize="33sp" />
+
+
+            <LinearLayout
+                android:layout_width="95dp"
+                android:layout_height="70dp">
+
+                <ImageButton
+                    android:id="@+id/equals"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="17dp"
+                    android:background="@drawable/background_circle"
+                    android:src="@drawable/ic_equal1"
+                    android:textColor="@color/operations" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+<!--    <View-->
+<!--        android:id="@+id/view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:layout_editor_absoluteY="313dp" />-->
+
+<!--    <androidx.constraintlayout.widget.Barrier-->
+<!--        android:id="@+id/barrier2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:barrierDirection="top"-->
+<!--        app:constraint_referenced_ids="view,button2,button3,button9,button5,button8,imageButton,imageButton2,imageButton3,button4,button10,imageButton4,imageButton5,button14,button15,button16,button17,button18,button19,imageButton7,imageButton8"-->
+<!--        tools:layout_editor_absoluteY="307dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button8"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/clear"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button2"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/view" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button8"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton2"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button8"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button8"-->
+<!--        app:srcCompat="@drawable/ic_backspace_24px" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imageButton"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton3"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButton"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imageButton"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        app:srcCompat="@drawable/ic_noun_percentages_991952" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton3"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imageButton2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageButton2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imageButton2"-->
+<!--        app:srcCompat="@drawable/ic_divide" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:fontFamily="@font/roboto"-->
+<!--        android:text="@string/seven"-->
+<!--        android:textSize="33sp"-->
+<!--        style="@style/Widget.AppCompat.Button.Borderless"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button5"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button3"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button8" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/eight"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button2"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button4"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button2" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button4"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/nine"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button3"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton4"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button3" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton4"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button4"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button4"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button4"-->
+<!--        app:srcCompat="@drawable/ic_clear_24px" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button5"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/four"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button17"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button9"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button2" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button9"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/five"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button5"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button10"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button5"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button5" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button10"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/six"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button9"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton5"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button9"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button9" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton5"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button10"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button10"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button10"-->
+<!--        app:srcCompat="@drawable/ic_remove_24px" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button17"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/one"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button14"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button18"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button5" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button18"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/two"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button17"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button19"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button17"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button17" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button19"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/three"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button18"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton8"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button18"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button18" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton8"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button19"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button19"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button19"-->
+<!--        app:srcCompat="@drawable/ic_add_24px" />-->
+
+<!--    <view-->
+<!--        android:id="@+id/button14"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button15"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button17"-->
+<!--        android:visibility="invisible"-->
+<!--        android:clickable="false"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button15"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/zero"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button14"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button16"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button14"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button14" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button16"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:text="@string/dot"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button15"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton7"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button15"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button15" />-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/imageButton7"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/button16"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/button16"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/button16" >-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginStart="24dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:background="@drawable/background_circle"-->
+<!--            android:scaleType="centerInside"-->
+<!--            android:src="@drawable/ic_equal1"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintDimensionRatio=""-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

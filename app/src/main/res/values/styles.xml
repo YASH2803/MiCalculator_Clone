@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+<!--        <item name="android:forceDarkAllowed">true</item>  Can be only used when the Api is above 29 -->
+    </style>
+
+    <style name="numbers">
+        <item name="android:textSize">38sp</item>
+        <item name="android:textColor">@color/numbers</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/roboto_thin</item>
+    </style>
+
+    <style name="operations">
+        <item name="android:textSize">38sp</item>
+        <item name="android:textColor">@color/operations</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/roboto</item>
+
+    </style>
+
+    <style name="display_number">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/answerField </item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/roboto</item> </style>
+
+        <!-- This style is for the splash screen -->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+
+    
+
+
+</resources>
